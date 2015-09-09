@@ -78,8 +78,6 @@ if (Meteor.isClient) {
       var access_token = 'CAACEdEose0cBAGzziDjxhHPhOCQJbUZBuNjI8OYOgvH1F6mxpc80IuZBEkicFjYqan6PhDCS5L51zkto3xThoRRA6znQy1DEJXmAG7UeJ8jeU1y6pG2yzVIzsDsU3TXdlxSoFzuk36lZCVuT8ozASatZAaHdbHFqUEvvsVqOl1E1WAcEVhTp3fMUDZAMuyG91EIospcoSzwZDZD';
       var get_command = '/' + page_identifier + "?fields=name,posts{comments,message}&access_token=" + access_token;
 
-      console.log("Something is happenning");
-
       FB.api(
         //GET_command + "&access_token=" + "access_token"
         //"/PepsiUS?fields=name,about&access_token=CAACEdEose0cBABkfqUpiAB1xSHh645rCr2dpsrt6bss3JJTc3KVZA5rUWgWeNrQxCoTHRDPh7tChvKe6uxBfKiiCAJEacbPAnBN8hxrJRl9HTS3UZAV8X7v8P5avcsyJQ5q4OQZAZAMEGBB1Bq0kyNjG8oqeDy7p6hDSLZCJLMFzzBIRZA8LTZAcFV5Cxg51vhZCATcFCW0UYAZDZD",
@@ -93,7 +91,7 @@ if (Meteor.isClient) {
             // JSON.stringify(response);
             // page_data = JSON.parse(response);
 
-            console.log(response.posts.data[0].message);
+            //console.log(response.posts.data[0].message);
 
             facebookDB.insert(response);
 
