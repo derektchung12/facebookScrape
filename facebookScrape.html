@@ -1,14 +1,50 @@
 <head>
-  <title>facebookScrape</title>
+  <title>FacebookApp</title>
 </head>
 
+
+
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  <div class="container">
+    <header>
+      <h1>Facebook Scrape app</h1>
+      
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Add facebook identifier" />
+      </form>
+
+    </header>
+ 
+    <ul>
+      {{#each pages}}
+        {{> fb_page}}
+        <!-- {{#each posts.data}}
+          {{> fb_post}}
+        {{/each}} -->
+      {{/each}}
+    </ul>
+  </div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+ 
+<template name="fb_page">
+  	<li>
+  		<button class="delete">&times;</button> 
+  		<span class="pageName"><strong>{{name}}</strong></span>
+      {{#each posts.data}}
+        <li>
+          <span class="post">{{message}}</span>
+        
+        {{#each comments.data}}
+          <li>
+            <!-- Comentor and comments -->
+            <span class="commentor">{{from.name}}:</span>
+            <span class="comment">{{message}}</span>
+          </li>
+        {{/each}}
+      </li>
+      {{/each}}
+  	</li>
 </template>
+
+
